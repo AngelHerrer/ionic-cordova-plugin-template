@@ -12,6 +12,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import android.content.Context;
 import android.util.Log;
 
 import java.util.Date;
@@ -26,7 +27,12 @@ public class MiPlugin extends CordovaPlugin {
   }
 
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
-    if(action.equals("saludar")) {
+    Context context = this.cordova.getActivity().getApplicationContext();
+    if(action.equals("OtpVirtual")) {
+      String userId = "angel07";
+      GenerateToken generateToken = new GenerateToken();
+      generateToken.onGenerateOtp(context ,userId);
+
       // An example of returning data back to the web layer
        String phrase = args.getString(0);
       // Echo back the first argument      
@@ -35,5 +41,9 @@ public class MiPlugin extends CordovaPlugin {
     }
     return true;
   }
+
+
+
+
 
 }
