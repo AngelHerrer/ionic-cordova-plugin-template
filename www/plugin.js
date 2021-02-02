@@ -7,9 +7,6 @@ var PLUGIN_NAME = 'MiPlugin';
 var MiPlugin = {
   otp: function (name, successCallback, errorCallback){
         exec(successCallback, errorCallback, PLUGIN_NAME, "OtpVirtual4", [name]);
-  },
-  activation: function (name, successCallback, errorCallback){
-        exec(successCallback, errorCallback, PLUGIN_NAME, "OtpVirtual5", [name]);
   }
 };
 
